@@ -8,10 +8,7 @@ export const omdbApi = createApi({
     paramsSerializer: serializeParamsWithApiKey,
   }),
   endpoints: (builder) => ({
-    searchMovies: builder.query<
-      ApiResponseProps<MovieProps[]>,
-      SearchMoviesParams
-    >({
+    searchMovies: builder.query<MovieProps, SearchMoviesParams>({
       query: ({ title, type, year, page }) => ({
         url: "",
         params: {
@@ -23,10 +20,7 @@ export const omdbApi = createApi({
       }),
     }),
 
-    getMovieDetails: builder.query<
-      ApiResponseProps<MovieDetailsProps>,
-      GetMovieDetailsParams
-    >({
+    getMovieDetails: builder.query<MovieDetailsProps, GetMovieDetailsParams>({
       query: ({ id, title, plot }) => ({
         url: "",
         params: {
@@ -37,7 +31,7 @@ export const omdbApi = createApi({
       }),
     }),
 
-    getMoviePoster: builder.query<ApiResponseProps<PosterProps>, string>({
+    getMoviePoster: builder.query<PosterProps, string>({
       query: (id) => ({
         url: "",
         params: {
