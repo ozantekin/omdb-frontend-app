@@ -1,0 +1,84 @@
+@use "../variables" as *;
+
+.table {
+  width: 100%;
+  margin: 16px 0;
+  border-radius: 12px;
+  border-collapse: collapse;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  text-align: left;
+}
+
+.table-head {
+  background-color: $background-color;
+  font-weight: bold;
+  border-radius: 12px;
+  color: $secondary-color;
+
+  th {
+    padding: 14px 20px;
+    font-size: 16px;
+  }
+}
+
+.table-cell {
+  padding: 14px 20px;
+  font-size: 14px;
+  color: $secondary-color;
+}
+
+.table-pagination {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-top: 20px;
+  gap: 12px;
+
+  button {
+    &:hover {
+      background-color: $hover-color;
+    }
+
+    &:disabled {
+      background-color: $disabled-color;
+      cursor: not-allowed;
+    }
+  }
+
+  &__info {
+    font-size: 14px;
+    color: $secondary-color;
+    padding: 8px 16px;
+    text-align: center;
+  }
+}
+
+.table-state {
+  text-align: center;
+  padding: 24px;
+  font-size: 18px;
+  font-weight: 600;
+
+  &__loading {
+    color: $warning-color;
+    animation: pulse 1s infinite;
+  }
+
+  &__error {
+    color: $error-color;
+  }
+
+  &__noData {
+    color: $secondary-color;
+  }
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
