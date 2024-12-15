@@ -91,14 +91,19 @@ export default function MoviesPageView() {
       key: "title",
       render: (value: string, record: MovieSearchProps) => (
         <Link href={`/movie/${record.imdbID}`} className="movies-table__link">
-          <Image
-            src={
-              record.Poster !== "N/A" ? record.Poster : "/assets/fallback.avif"
-            }
-            alt={value}
-            width={50}
-            height={50}
-          />
+          <figure>
+            <Image
+              src={
+                record.Poster !== "N/A"
+                  ? record.Poster
+                  : "/assets/fallback.avif"
+              }
+              alt={value}
+              width={50}
+              height={50}
+              draggable={false}
+            />
+          </figure>
           <span>{value}</span>
         </Link>
       ),
