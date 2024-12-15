@@ -20,9 +20,9 @@ body {
   display: flex;
   flex-direction: column;
   position: relative;
-  max-width: 1024px;
+  max-width: 64rem;
   margin: 0 auto;
-  padding: 16px;
+  padding: $spacer;
   width: 100%;
   font-family: $font-family;
   font-size: $font-size-base;
@@ -59,7 +59,7 @@ a {
 button {
   font-family: $font-family;
   font-size: $font-size-base;
-  padding: 8px 16px;
+  padding: $spacer $spacer;
   background-color: $primary-color;
   color: #fff;
   border: none;

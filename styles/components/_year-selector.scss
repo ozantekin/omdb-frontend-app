@@ -1,0 +1,24 @@
+@use "../variables" as *;
+
+.year-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  margin-top: $spacer-xs;
+  max-height: 12.5rem;
+  overflow-y: auto;
+  box-shadow: 0 0.25rem 0.375rem rgba(0, 0, 0, 0.1);
+  border: 1px solid $border-color;
+  border-radius: $border-radius;
+  background-color: $background-color;
+}
+
+.year-item {
+  padding: $spacer;
+  cursor: pointer;
+
+  &:hover {
+    background-color: $border-color;
+  }
+}

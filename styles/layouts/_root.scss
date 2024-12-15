@@ -3,23 +3,23 @@
 .root {
   width: 100%;
   border: 1px solid $border-color;
-  border-radius: 12px;
+  border-radius: $border-radius;
   text-align: center;
-  padding: 1rem 2rem;
+  padding: $spacer $spacer-lg;
 
   &__header {
-    display: flex;
+    @extend %flex-center;
     justify-content: flex-start;
-    align-items: center;
-    gap: 2rem;
+    gap: $spacer-lg;
   }
 
   &__main {
     flex-grow: 1;
-    padding: 1rem 0;
+    padding: $spacer 0;
   }
 
   &__footer {
-    font-size: 0.75rem;
+    font-size: $font-size-sm;
+    color: $secondary-color;
   }
 }

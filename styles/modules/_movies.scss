@@ -4,22 +4,22 @@
   &__filters {
     display: flex;
     flex-wrap: wrap;
-    gap: 16px;
-    margin-bottom: 16px;
+    gap: $spacer;
+    margin-bottom: $spacer;
   }
 }
 
 .movies-table {
   &__link {
-    font-size: 16px;
+    font-size: $font-size-base;
     text-decoration: none;
     color: $primary-color;
-    display: flex;
-    align-items: center;
-    gap: 8px;
+    @extend %flex-center;
+    justify-content: flex-start;
+    gap: $spacer;
 
     img {
-      border-radius: 12px;
+      border-radius: $border-radius;
     }
   }
 }

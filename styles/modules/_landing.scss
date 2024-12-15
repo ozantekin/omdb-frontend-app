@@ -1,70 +1,67 @@
 @use "../variables" as *;
 
 .hero {
-  display: flex;
+  @extend %flex-center;
   flex-grow: 1;
-  justify-content: center;
-  align-items: center;
   text-align: center;
 
   &__content {
-    max-width: 600px;
-    padding: 2rem;
+    max-width: 38rem;
+    padding: $spacer-lg;
   }
 
   &__title {
     font-size: 2.5rem;
     font-weight: bold;
-    margin-bottom: 1rem;
+    margin-bottom: $spacer;
     line-height: 1.2;
   }
 
   &__description {
-    font-size: 1rem;
-    margin-bottom: 1.5rem;
+    font-size: $font-size-base;
+    margin-bottom: $spacer-lg;
   }
 
   &__cta {
-    padding: 0.75rem 1.5rem;
+    padding: $spacer $spacer-lg;
   }
 }
 
 .movies-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  gap: 1rem;
+  gap: $spacer;
 
   .movie-card {
-    display: flex;
+    @extend %flex-center;
     flex-direction: column;
-    align-items: center;
-    background-color: $background-color;
+    background-color: $card-bg-color;
     border: 1px solid $border-color;
-    border-radius: 12px;
-    padding: 1rem;
+    border-radius: $border-radius;
+    padding: $spacer;
     text-align: center;
     transition: transform 0.3s, box-shadow 0.3s;
 
     &:hover {
       transform: scale(1.05);
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 0.25rem 1rem rgba(0, 0, 0, 0.1);
     }
 
     &__poster {
       width: 100%;
-      max-height: 350px;
+      max-height: 22rem;
       object-fit: cover;
-      border-radius: 8px;
-      margin-bottom: 1rem;
+      border-radius: $border-radius;
+      margin-bottom: $spacer;
     }
 
     &__title {
-      margin-bottom: 0.5rem;
+      margin-bottom: $spacer;
     }
 
     &__release {
       color: $secondary-color;
-      margin-bottom: 1rem;
+      margin-bottom: $spacer;
     }
   }
 }

@@ -1,0 +1,35 @@
+@use "../variables" as *;
+
+.base-input {
+  position: relative;
+  @extend %flex-center;
+  gap: $spacer;
+  padding: $spacer $spacer;
+  border: 1px solid $border-color;
+  border-radius: $border-radius;
+  background-color: $background-color;
+  transition: box-shadow 0.3s, border-color 0.3s;
+  height: 2.4rem; /* already in rem */
+
+  &:focus-within {
+    border-color: $primary-color;
+    box-shadow: 0 0 0.25rem rgba(0, 123, 255, 0.4);
+  }
+
+  &__icon {
+    color: $secondary-color;
+    font-size: $font-size-lg;
+  }
+
+  &__field {
+    flex: 1;
+    border: none;
+    outline: none;
+    background: transparent;
+    font-size: $font-size-base;
+
+    &::placeholder {
+      color: $disabled-color;
+    }
+  }
+}
