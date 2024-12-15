@@ -5,11 +5,12 @@ import Link from "next/link";
 import { useState } from "react";
 import { useRouter, useSearchParams, usePathname } from "next/navigation";
 import { useDebounceCallback } from "@omdb/hooks/useDebounceCallback";
-import { TYPE_OPTIONS, YEAR_OPTIONS } from "@omdb/constants/filter";
+import { TYPE_OPTIONS } from "@omdb/constants/filter";
 import TypeBadge from "@omdb/components/type-badge";
 import Image from "next/image";
 import SearchInput from "@omdb/components/search-input";
 import TypeSelector from "@omdb/components/type-selector";
+import YearSelector from "@omdb/components/year-selector";
 
 export default function MoviesPageView() {
   const { replace } = useRouter();
@@ -39,12 +40,10 @@ export default function MoviesPageView() {
     updateQueryParams({ title: value, page: 1 });
   };
 
-  const handleYearChange = ({
-    target: { value },
-  }: React.ChangeEvent<HTMLSelectElement>) => {
-    setYear(value);
+  const handleYearChange = (selectedYear: string) => {
+    setYear(selectedYear);
     setPage(1);
-    updateQueryParams({ year: value, page: 1 });
+    updateQueryParams({ year: selectedYear, page: 1 });
   };
 
   const handleTypeChange = (value: TypeProps) => {
@@ -126,13 +125,7 @@ export default function MoviesPageView() {
       <div className="movies-page__filters">
         <SearchInput value={searchTerm} onChange={handleSearchChange} />
 
-        <select value={year} onChange={handleYearChange}>
-          {YEAR_OPTIONS.map((option) => (
-            <option key={option.label} value={option.value}>
-              {option.label}
-            </option>
-          ))}
-        </select>
+        <YearSelector value={year} onChange={handleYearChange} />
 
         <TypeSelector
           value={type}
