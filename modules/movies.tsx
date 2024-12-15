@@ -8,6 +8,8 @@ import { useDebounceCallback } from "@omdb/hooks/useDebounceCallback";
 import { TYPE_OPTIONS, YEAR_OPTIONS } from "@omdb/constants/filter";
 import TypeBadge from "@omdb/components/type-badge";
 import Image from "next/image";
+import SearchInput from "@omdb/components/search-input";
+import TypeSelector from "@omdb/components/type-selector";
 
 export default function MoviesPageView() {
   const { replace } = useRouter();
@@ -45,10 +47,8 @@ export default function MoviesPageView() {
     updateQueryParams({ year: value, page: 1 });
   };
 
-  const handleTypeChange = ({
-    target: { value },
-  }: React.ChangeEvent<HTMLSelectElement>) => {
-    setType(value as TypeProps);
+  const handleTypeChange = (value: TypeProps) => {
+    setType(value);
     setPage(1);
     updateQueryParams({ type: value, page: 1 });
   };
@@ -123,13 +123,9 @@ export default function MoviesPageView() {
 
   return (
     <>
-      <div>
-        <input
-          type="text"
-          placeholder="Search by name"
-          value={searchTerm}
-          onChange={handleSearchChange}
-        />
+      <div className="movies-page__filters">
+        <SearchInput value={searchTerm} onChange={handleSearchChange} />
+
         <select value={year} onChange={handleYearChange}>
           {YEAR_OPTIONS.map((option) => (
             <option key={option.label} value={option.value}>
@@ -138,13 +134,11 @@ export default function MoviesPageView() {
           ))}
         </select>
 
-        <select value={type} onChange={handleTypeChange}>
-          {TYPE_OPTIONS.map((type) => (
-            <option key={type} value={type}>
-              {type}
-            </option>
-          ))}
-        </select>
+        <TypeSelector
+          value={type}
+          options={TYPE_OPTIONS}
+          onChange={handleTypeChange}
+        />
 
         <button onClick={handleReset}>Reset</button>
       </div>
