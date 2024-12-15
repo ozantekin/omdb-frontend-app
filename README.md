@@ -14,16 +14,6 @@ The OMDb Frontend App is a single-page application built with React and Redux To
 - **Custom UI**: Built without external UI libraries.
 - **URL-based State Management**: Shareable links with preserved state.
 
-## Technical Requirements
-
-- **React**: UI library.
-- **Redux Toolkit**: State management.
-- **TypeScript**: Optional but recommended.
-- **SASS**: Styling.
-- **Next.js**: Server-side rendering.
-- **OMDb API**: Movie data.
-- **lodash.debounce**: Optimized search.
-
 ## Setup
 
 1. Clone the repository.
