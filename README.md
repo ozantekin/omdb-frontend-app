@@ -27,7 +27,18 @@ The OMDb Frontend App is a single-page application built with React and Redux To
 ## Setup
 
 1. Clone the repository.
+
+```bash
+git clone https://github.com/yourusername/omdb-frontend-app.git
+cd omdb-frontend-app
+```
+
 2. Install dependencies.
+
+```bash
+npm install
+```
+
 3. Run the development server:
 
 ```bash
