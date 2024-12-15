@@ -9,7 +9,7 @@ import { TYPE_OPTIONS, YEAR_OPTIONS } from "@omdb/constants/filter";
 import TypeBadge from "@omdb/components/type-badge";
 import Image from "next/image";
 
-export default function MoviePageView() {
+export default function MoviesPageView() {
   const { replace } = useRouter();
   const searchParams = useSearchParams();
   const pathname = usePathname();
