@@ -1,5 +1,8 @@
+type TypeProps = "movie" | "series" | "episode";
+type PlotProps = "short" | "full";
+
 interface OmdbApiParamsBase {
-  type?: "movie" | "series" | "episode";
+  type?: TypeProps;
   y?: number;
   r?: "json" | "xml";
   callback?: string;
@@ -9,7 +12,7 @@ interface OmdbApiParamsBase {
 interface OmdbByIdOrTitleParams extends OmdbApiParamsBase {
   i?: string;
   t?: string;
-  plot?: "short" | "full";
+  plot?: PlotProps;
 }
 
 interface OmdbBySearchParams extends OmdbApiParamsBase {
@@ -18,3 +21,16 @@ interface OmdbBySearchParams extends OmdbApiParamsBase {
 }
 
 type OmdbApiParams = OmdbByIdOrTitleParams | OmdbBySearchParams;
+
+interface SearchMoviesParams {
+  title: string;
+  type?: TypeProps;
+  year?: string;
+  page?: number;
+}
+
+interface GetMovieDetailsParams {
+  id?: string;
+  title?: string;
+  plot?: PlotProps;
+}

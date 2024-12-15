@@ -1,14 +1,16 @@
-type TypeProps = "movie" | "series" | "episode";
+type ResponseProps = "True" | "False";
+
+interface MovieSearchProps {
+  Title: string;
+  Year: string;
+  imdbID: string;
+  Type: TypeProps;
+  Poster: string;
+}
 
 interface MovieProps {
-  Response: "True" | "False";
-  Search?: {
-    Title: string;
-    Year: string;
-    imdbID: string;
-    Type: TypeProps;
-    Poster: string;
-  }[];
+  Response: ResponseProps;
+  Search: MovieSearchProps[];
   Error?: string;
   totalResults?: string;
 }
@@ -36,22 +38,9 @@ interface MovieDetailsProps {
   BoxOffice: string;
   Production: string;
   Website: string;
-  Response: "True" | "False";
+  Response: ResponseProps;
 }
 
 interface PosterProps {
   Poster: string;
-}
-
-interface SearchMoviesParams {
-  title: string;
-  type?: TypeProps;
-  year?: number;
-  page?: number;
-}
-
-interface GetMovieDetailsParams {
-  id?: string;
-  title?: string;
-  plot?: "short" | "full";
 }
