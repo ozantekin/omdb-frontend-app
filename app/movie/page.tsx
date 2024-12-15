@@ -1,10 +1,10 @@
-import MoviesTable from "@omdb/modules/movies-table";
+import MoviesPageView from "@omdb/modules/movies";
 import { Suspense } from "react";
 
-export default function MoviePage() {
+export default function MoviesPage() {
   return (
     <Suspense fallback="Loading...">
-      <MoviesTable />
+      <MoviesPageView />
     </Suspense>
   );
 }

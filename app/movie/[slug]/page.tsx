@@ -1,5 +1,5 @@
-import MovieDetail from "@omdb/modules/movie-detail";
+import MovieDetailsPageView from "@omdb/modules/movie-details";
 
-export default function MovieDetailPage() {
-  return <MovieDetail />;
+export default function MovieDetailsPage() {
+  return <MovieDetailsPageView />;
 }
