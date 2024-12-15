@@ -6,15 +6,28 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+  text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  text-rendering: optimizeLegibility;
+  font-feature-settings: "rlig" 1, "calt" 1;
+}
+
 body {
+  overflow-x: hidden;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
   max-width: 1024px;
   margin: 0 auto;
   padding: 16px;
+  width: 100%;
   font-family: $font-family;
   font-size: $font-size-base;
   line-height: $line-height;
-  background-color: #fff;
-  color: #333;
+  letter-spacing: 0.05em;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }

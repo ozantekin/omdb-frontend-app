@@ -1,0 +1,70 @@
+@use "../variables" as *;
+
+.hero {
+  display: flex;
+  flex-grow: 1;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  &__content {
+    max-width: 600px;
+    padding: 2rem;
+  }
+
+  &__title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+  }
+
+  &__description {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  &__cta {
+    padding: 0.75rem 1.5rem;
+  }
+}
+
+.movies-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1rem;
+
+  .movie-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: $background-color;
+    border: 1px solid $border-color;
+    border-radius: 12px;
+    padding: 1rem;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+
+    &:hover {
+      transform: scale(1.05);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    &__poster {
+      width: 100%;
+      max-height: 350px;
+      object-fit: cover;
+      border-radius: 8px;
+      margin-bottom: 1rem;
+    }
+
+    &__title {
+      margin-bottom: 0.5rem;
+    }
+
+    &__release {
+      color: $secondary-color;
+      margin-bottom: 1rem;
+    }
+  }
+}
