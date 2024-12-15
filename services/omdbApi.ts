@@ -4,7 +4,7 @@ import { serializeParamsWithApiKey } from "../utils/omdbApiUtils";
 export const omdbApi = createApi({
   reducerPath: "omdbApi",
   baseQuery: fetchBaseQuery({
-    baseUrl: "http://www.omdbapi.com/",
+    baseUrl: "https://www.omdbapi.com/",
     paramsSerializer: serializeParamsWithApiKey,
   }),
   endpoints: (builder) => ({
@@ -37,7 +37,7 @@ export const omdbApi = createApi({
         params: {
           i: id,
         },
-        baseUrl: "http://img.omdbapi.com/",
+        baseUrl: "https://img.omdbapi.com/",
       }),
     }),
   }),
