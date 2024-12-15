@@ -1,5 +1,14 @@
 @use "../variables" as *;
 
+.movies-page {
+  &__filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-bottom: 16px;
+  }
+}
+
 .movies-table {
   &__link {
     font-size: 16px;

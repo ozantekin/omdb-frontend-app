@@ -1,0 +1,33 @@
+.search-input {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem; /* İkon ve input arası boşluk */
+  padding: 0.5rem 1rem; /* İç boşluk */
+  border: 1px solid #e5e7eb; /* Kenarlık */
+  border-radius: 8px; /* Yuvarlatılmış köşeler */
+  background-color: #f8fafc; /* Arka plan rengi */
+  transition: box-shadow 0.3s, border-color 0.3s;
+
+  &:focus-within {
+    border-color: #2563eb; /* Focus durumunda kenarlık rengi */
+    box-shadow: 0 0 4px rgba(37, 99, 235, 0.4); /* Hafif glow efekti */
+  }
+
+  &__icon {
+    color: #6b7280; /* İkon rengi */
+    font-size: 1.25rem; /* İkon boyutu */
+  }
+
+  &__field {
+    flex: 1; /* Input alanını genişletir */
+    border: none; /* Varsayılan kenarlık kaldırılır */
+    outline: none; /* Focus outline kaldırılır */
+    background: transparent; /* Arka plan şeffaf */
+    font-size: 1rem; /* Yazı boyutu */
+    color: #1f2937; /* Yazı rengi */
+
+    &::placeholder {
+      color: #9ca3af; /* Placeholder rengi */
+    }
+  }
+}
